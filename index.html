@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Classes by Sachin Kumar</title>
+  <title>Kumar's Coding Classes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -23,10 +23,79 @@
       font-weight: bold;
     }
 
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
+    }
+
+    section {
+      margin: 40px 0;
+    }
+
+    .intro, .why-choose, .catalog {
+      text-align: center;
+    }
+
+    /* Page turning animation */
+    .flip-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      perspective: 1500px;
+      margin-bottom: 50px;
+    }
+
+    .flip-page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 2s ease-in-out;
+    }
+
+    .flip-page:hover {
+      transform: rotateY(180deg);
+    }
+
+    .flip-page .front, .flip-page .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .flip-page .front {
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    .flip-page .back {
+      background-color: #1e3a8a;
+      color: white;
+      transform: rotateY(180deg);
     }
 
     .card-container {
@@ -41,14 +110,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transform: translateY(0);
-      transition: transform 0.3s ease;
       padding: 20px;
       text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
     }
 
     .card h3 {
@@ -61,12 +124,6 @@
       font-size: 1em;
     }
 
-    .card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 20px;
-    }
-
     .cta {
       background-color: #1e3a8a;
       color: #fff;
@@ -76,9 +133,12 @@
       margin-top: 40px;
     }
 
-    .cta p {
-      margin: 0;
-      font-size: 1.1em;
+    footer {
+      background-color: #1e3a8a;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 1em;
     }
 
     .cta a {
@@ -97,29 +157,6 @@
       background-color: #1e40af;
     }
 
-    footer {
-      background-color: #1e3a8a;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      font-size: 1em;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in {
-      animation: fadeInUp 1s ease-out;
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
       header {
@@ -129,14 +166,6 @@
 
       .container {
         padding: 10px;
-      }
-
-      .cta {
-        font-size: 1em;
-      }
-
-      .cta p {
-        font-size: 1em;
       }
 
       .card-container {
@@ -185,78 +214,115 @@
   </style>
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-    Coding Classes by Sachin Kumar
+    <div class="container">
+      <h1>Kumar's Coding Classes</h1>
+      <p>Your Pathway to Becoming a Coding Expert</p>
+    </div>
   </header>
 
-  <div class="container">
+  <!-- Home Section -->
+  <section class="intro" id="home">
+    <div class="container">
+      <h2>Welcome to Kumar's Coding Classes!</h2>
+      <p>Whether you are a beginner or an advanced learner, we offer personalized home tuition and online classes in various programming technologies. Learn from an experienced Full Stack Software Engineer with over 1 year of experience.</p>
+    </div>
+  </section>
 
-    <div class="card-container">
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/c-plus-plus-logo.png" alt="C++">
-        <h3>C++</h3>
-        <p>Learn C++ programming, from basics to advanced concepts. Build your foundation in coding.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/html-5.png" alt="HTML">
-        <h3>HTML</h3>
-        <p>Master HTML, the building block of web development. Learn to create stunning web pages.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/css3.png" alt="CSS">
-        <h3>CSS</h3>
-        <p>Understand CSS to style your HTML elements. Learn layouts, animations, and more.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/javascript.png" alt="JavaScript">
-        <h3>JavaScript</h3>
-        <p>Get hands-on with JavaScript and learn how to add dynamic behavior to your websites.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/developer.png" alt="Web Development">
-        <h3>Web Development</h3>
-        <p>Learn how to build complete websites using front-end and back-end technologies.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/project.png" alt="Projects">
-        <h3>Projects</h3>
-        <p>Work on real-world projects to solidify your understanding of coding and web development.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/api.png" alt="API Development">
-        <h3>API Development</h3>
-        <p>Learn to develop APIs using modern tools and frameworks for web applications.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/interview.png" alt="Interview Preparation">
-        <h3>Interview Preparation</h3>
-        <p>Prepare for coding interviews with tips, mock tests, and common questions.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/c-sharp-logo.png" alt="C#">
-        <h3>C#</h3>
-        <p>Master C# for software development, especially for .NET applications.</p>
-      </div>
-      <div class="card fade-in">
-        <img src="https://img.icons8.com/ios/452/dot-net.png" alt="Dot Net">
-        <h3>.NET</h3>
-        <p>Learn the .NET framework and build robust applications for the web and desktop.</p>
+  <!-- Why Choose Section (with page-flip effect) -->
+  <section class="why-choose">
+    <div class="container">
+      <h2>Why Choose Us?</h2>
+      <div class="flip-container">
+        <div class="flip-page">
+          <div class="front">
+            <ul>
+              <li>Personalized attention with home and online classes</li>
+              <li>Industry insights from a Full Stack Software Engineer</li>
+              <li>Hands-on learning with real-world projects</li>
+              <li>Flexible timing and affordable pricing</li>
+            </ul>
+          </div>
+          <div class="back">
+            <ul>
+              <li>High-quality learning resources provided</li>
+              <li>Instant doubt clearing and support</li>
+              <li>Focus on both practical and theoretical knowledge</li>
+              <li>Expert guidance for interviews and career growth</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="cta">
+  <!-- Catalog Section -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <h2>Our Coding Courses</h2>
+      <div class="card-container">
+        <!-- Add your course details here -->
+        <div class="card">
+          <h3>C++</h3>
+          <p>Learn C++ programming, from basics to advanced concepts. Build your foundation in coding.</p>
+        </div>
+        <div class="card">
+          <h3>HTML</h3>
+          <p>Master HTML, the building block of web development. Learn to create stunning web pages.</p>
+        </div>
+        <div class="card">
+          <h3>CSS</h3>
+          <p>Understand CSS to style your HTML elements. Learn layouts, animations, and more.</p>
+        </div>
+        <div class="card">
+          <h3>JavaScript</h3>
+          <p>Get hands-on with JavaScript and learn how to add dynamic behavior to your websites.</p>
+        </div>
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Learn how to build complete websites using front-end and back-end technologies.</p>
+        </div>
+        <div class="card">
+          <h3>Projects</h3>
+          <p>Work on real-world projects to solidify your understanding of coding and web development.</p>
+        </div>
+        <div class="card">
+          <h3>API Development</h3>
+          <p>Learn to develop APIs using modern tools and frameworks for web applications.</p>
+        </div>
+        <div class="card">
+          <h3>Interview Preparation</h3>
+          <p>Prepare for coding interviews with tips, mock tests, and common questions.</p>
+        </div>
+        <div class="card">
+          <h3>C#</h3>
+          <p>Master C# for software development, especially for .NET applications.</p>
+        </div>
+        <div class="card">
+          <h3>.NET</h3>
+          <p>Learn the .NET framework and build robust applications for the web and desktop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="cta">
+    <div class="container">
       <p>Contact me for home tution or online coding classes. I have more than 1 year of experience in coding tuition.</p>
       <p>Currently working as a Full Stack Software Engineer at Tavant Technologies, Noida.</p>
       <p>WhatsApp: <strong>7737518861</strong></p>
       <p>Email: <strong><a href="mailto:sachinkujapi@gmail.com">sachinkujapi@gmail.com</a></strong></p>
       <a href="https://wa.me/7737518861" target="_blank">Get in Touch on WhatsApp</a>
     </div>
+  </section>
 
-  </div>
-
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Coding Classes by Sachin Kumar. All rights reserved.
+    <div class="container">
+      <p>&copy; 2025 Kumar's Coding Classes. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
